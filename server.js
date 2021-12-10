@@ -1,6 +1,7 @@
 // dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const Stock = require("./models/stock.js");
 
 // initialize app
 const app = express();
@@ -23,8 +24,11 @@ app.use(express.urlencoded({ extended: false })); // creates req.body, setting e
 
 // mount routes
 app.post("/stocks", (req, res) => {
-    res.send(req.body);
-})
+    req.body.CurrentHolding = !!req.body.CurrentHolding;
+    Stock.create(req.body, (err, stock) => {
+        res.send(stock)
+    });
+});
 
 // tell app to listen
 const PORT = process.env.PORT; // set by us in dev, but heroku will assign when deployed in cloud
