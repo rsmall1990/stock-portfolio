@@ -23,11 +23,20 @@ db.on("error", () => console.log("MongoDB Error:" + err.message));
 app.use(express.urlencoded({ extended: false })); // creates req.body, setting extended to false turns off unneeded express functionality
 
 // mount routes
+
+// index
+
+// new
+app.get("/stocks/new", (req, res) => {
+  res.send("new");
+});
+
+// create
 app.post("/stocks", (req, res) => {
-    req.body.CurrentHolding = !!req.body.CurrentHolding;
-    Stock.create(req.body, (err, stock) => {
-        res.send(stock)
-    });
+  req.body.CurrentHolding = !!req.body.CurrentHolding;
+  Stock.create(req.body, (err, stock) => {
+    res.send(stock);
+  });
 });
 
 // tell app to listen
