@@ -25,6 +25,11 @@ app.use(express.urlencoded({ extended: false })); // creates req.body, setting e
 // mount routes
 
 // index
+app.get("/stock", (req, res) => {
+    Stock.find({}, (err, arrayOfStocks) => { // find with empty query object returns all objects in array
+        res.send(arrayOfStocks);
+    });
+});
 
 // new
 app.get("/stocks/new", (req, res) => {
@@ -38,6 +43,8 @@ app.post("/stocks", (req, res) => {
     res.send(stock);
   });
 });
+
+// 
 
 // tell app to listen
 const PORT = process.env.PORT; // set by us in dev, but heroku will assign when deployed in cloud
