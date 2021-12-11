@@ -64,8 +64,6 @@ app.post("/stocks", (req, res) => {
   });
 });
 
-// edit
-
 // show
 app.get("/stocks/:id", (req, res) => {
   Stock.findById(req.params.id, (err, foundStock) => {
