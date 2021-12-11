@@ -45,6 +45,16 @@ app.delete("/stocks/:id", (req, res) => {
 });
 
 // update
+app.put("/stocks/:id", (req, res) => {
+  Stock.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedStock) => {
+      res.send(updatedStock);
+    }
+  );
+});
 
 // create
 app.post("/stocks", (req, res) => {
