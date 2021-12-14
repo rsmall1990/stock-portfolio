@@ -27,7 +27,7 @@
             </tr>
             <% for(let i = 0; i < stock.length; i+=1) { %>
                 <tr>
-                    <td><a href="/stocks/<%= i %>"</a><%= stock[i].Name %> </td>
+                    <td><a href="/stocks/<%= stock[i]._id; %>"</a><%= stock[i].Name %> </td>
                     <td><%= stock[i].Ticker %></td>
                     <td><%= stock[i].CurrentPrice %></td>
                     <td><%= stock[i].CurrentHolding %></td>

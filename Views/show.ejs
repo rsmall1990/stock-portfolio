@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/skeleton.css"/>
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= stock.Name %></h1>
+      <nav>
+        <a href="/stocks/">Back</a>
+      </nav>
+      <h3>Ticker</h3>
+      <p><%= stock.Ticker %></p>
+      <h3>CurrentPrice</h3>
+      <p><%= stock.CurrentPrice %></p>
+      <h3>CurrentHolding</h3>
+      <p><%= stock.CurrentHolding %></p>
+      <h3>Buy Price</h3>
+      <p><%= stock.BuyPrice %></p>
+      <h3>Quantity</h3>
+      <p><%= stock.Quantity %></p>
+    </div>
+  </body>
 </html>

@@ -27,13 +27,13 @@ app.use(express.urlencoded({ extended: false })); // creates req.body, setting e
 // index
 app.get("/stocks", (req, res) => {
   //for (i = 0; i < Stock.length; i += 1) {
-    //     let ytdGainLoss = (parseInt(Stock[i].CurrentPrice) - parseInt(Stock[i].buyPrice)*parseInt(Stock[i].quantity) + ytdGainLoss);
-    //     console.log(Stock);
-    //     }
+  //     let ytdGainLoss = (parseInt(Stock[i].CurrentPrice) - parseInt(Stock[i].buyPrice)*parseInt(Stock[i].quantity) + ytdGainLoss);
+  //     console.log(Stock);
+  //     }
   Stock.find({}, (err, arrayOfStocks) => {
     // find with empty query object returns all objects in array
     res.render("index.ejs", {
-        stock: arrayOfStocks
+      stock: arrayOfStocks,
     });
   });
 });
@@ -73,7 +73,9 @@ app.post("/stocks", (req, res) => {
 // show
 app.get("/stocks/:id", (req, res) => {
   Stock.findById(req.params.id, (err, foundStock) => {
-    res.send(foundStock);
+    res.render("show.ejs", {
+      stock: foundStock, // sending identified stock to stock variable for show page
+    });
   });
 });
 
