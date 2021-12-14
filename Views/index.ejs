@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stocks</title>
 </head>
-<body>
-    
+<body id="backgroundStyle">
+    <% // if( ytdGainLoss < 0) { %>
+        <!-- <style> #backgroundStyle {background-color: red} </style> -->
+    <% // } else if( ytdGainLoss > 1000){ %>
+        <!-- <style> #backgroundStyle {background-color: green} </style> -->
+    <% // } %> 
+    <div class="container">
+        <h1>Portfolio</h1>
+        <button><a href="/stocks/new">Add Stock</a></button>
+        <h4>YTD Gains/Losses: <%= // ytdGainLoss %> </h4> <!-- style this green/red for context -->
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>CurrentPrice</th>
+                <th>currentHolding</th>
+                <th>BuyPrice</th>
+                <th>Quantity</th>
+            </tr>
+            <% for(let i = 0; i < stock.length; i+=1) { %>
+                <tr>
+                    <td><a href="/stocks/<%= i %>"</a><%= stock[i].Name %> </td>
+                    <td><%= stock[i].Ticker %></td>
+                    <td><%= stock[i].CurrentPrice %></td>
+                    <td><%= stock[i].CurrentHolding %></td>
+                    <td><%= stock[i].BuyPrice %></td>
+                    <td><%= stock[i].Quantity %></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
 </body>
 </html>

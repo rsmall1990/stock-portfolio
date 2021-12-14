@@ -6,9 +6,11 @@ const Schema = mongoose.Schema;
 const stockSchema = new Schema({
     Name: {type: String, required: true},
     Ticker: {type: String, required: true},
+    CurrentPrice: {type: Number, required: true},
     CurrentHolding: Boolean,
     BuyDate: {type: Date, required: false},
     BuyPrice: {type: Number, required: false},
+    quantity: {type: Number, required: false},
     SellDate: {type: Date, required: false},
     SellPrice: {type: Number, required: false},
 }, { timestamps: true });
