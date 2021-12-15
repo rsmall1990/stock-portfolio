@@ -28,11 +28,12 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // login
 app.get("/", (req, res) => {
-  try{
-    res.render("login.ejs")
-  } catch(error) {
-    console.log(error);
-  }
+  res.send("hello world")
+  // try{
+  //   res.render("login.ejs")
+  // } catch(error) {
+  //   console.log(error);
+  // }
 });
 
 // index
