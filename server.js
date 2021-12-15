@@ -89,6 +89,11 @@ app.get("/stocks/:id", (req, res) => {
   });
 });
 
+// Research
+agg.get("/research", (req, res) => {
+  res.render("research.ejs");
+});
+
 // tell app to listen
 const PORT = process.env.PORT; // set by us in dev, but heroku will assign when deployed in cloud
 
