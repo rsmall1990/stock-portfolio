@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false })); // creates req.body, setting e
 
 // login
 app.get("/", (req, res) => {
-    res.send("Test Login Page");
+    res.render("login.ejs");
 })
 
 // index
