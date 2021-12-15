@@ -77,7 +77,7 @@ app.post("/stocks", (req, res) => {
     req.body.CurrentHolding = false;
   }
   Stock.create(req.body, (error, stock) => {
-    res.send(stock);
+    res.redirect("/stocks");
   });
 });
 
