@@ -90,7 +90,7 @@ app.get("/stocks/:id", (req, res) => {
 });
 
 // Research
-agg.get("/research", (req, res) => {
+app.get("/research", (req, res) => {
   res.render("research.ejs");
 });
 
