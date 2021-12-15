@@ -1,6 +1,6 @@
 # Stock Portfolio Project
 
-A basic stock portfolio tracker app
+Here is a basic stock portfolio tracker app called...you guessed it...Stock Portfolio
 
 ## Technologies Used
 
@@ -8,9 +8,11 @@ A basic stock portfolio tracker app
 - CSS
 - JavaScript/express
 - MongoDB
-- Heroku deployment
+- Heroku deployment...pending
+- PowerBI integration
 
 ## Screenshots
+
 
 ### WireFrame
 ![Wireframe](https://raw.githubusercontent.com/rsmall1990/GA-ticker-symbol-project/master/Screen%20Shot%202021-10-27%20at%208.06.04%20PM.png)

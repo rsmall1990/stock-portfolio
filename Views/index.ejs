@@ -15,8 +15,6 @@
     <% // } %> 
     <div class="container">
         <h1>Stock Portfolio</h1>
-        <button><a href="/stocks/new">Add Stock</a></button>
-        <button><a href="/research">Research</a></button>
         <h4>Current Holdings <%= // ytdGainLoss %> </h4> <!-- style this green/red for context -->
         <table>
             <tr>
@@ -36,13 +34,15 @@
                     <td><%= stock[i].CurrentHolding %></td>
                     <td><%= stock[i].BuyPrice %></td>
                     <td><%= stock[i].Quantity %></td>
-                    <td><form action="/stocks/<%= stock.id %>?_method=DELETE" method="POST">
-                            <input type="submit" value="DELETE" />
-                        </form>
-                    </td>
-                </tr>
+                    <td><form action="/stocks/<%= stock[i]._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                </td>
+            </tr>
             <% } %>
         </table>
+        <button><a href="/stocks/new">Add Stock</a></button>
+        <button><a href="/research">Research</a></button>
     </div>
 </body>
 </html>

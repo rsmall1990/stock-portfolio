@@ -10,9 +10,6 @@
   <body>
     <div class="container">
       <h1><%= stock.Name %></h1>
-      <nav>
-        <a href="/stocks">Back</a>
-      </nav>
       <h3>Ticker</h3>
       <p><%= stock.Ticker %></p>
       <h3>CurrentPrice</h3>
@@ -23,6 +20,9 @@
       <p><%= stock.BuyPrice %></p>
       <h3>Quantity</h3>
       <p><%= stock.Quantity %></p>
+      <button>
+        <a href="/stocks/">Back to Stock Portfolio</a>
+      </button>
     </div>
   </body>
 </html>

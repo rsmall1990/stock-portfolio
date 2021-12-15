@@ -28,7 +28,11 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // login
 app.get("/", (req, res) => {
-  res.render("login.ejs");
+  try{
+    res.render("login.ejs")
+  } catch(error) {
+    console.log(error);
+  }
 });
 
 // index
@@ -53,7 +57,7 @@ app.get("/stocks/new", (req, res) => {
 // delete
 app.delete("/stocks/:id", (req, res) => {
   Stock.findByIdAndDelete(req.params.id, (err, copyOfDeletedStock) => {
-    res.send("deleting");
+    res.redirect("/stocks");
   });
 });
 
