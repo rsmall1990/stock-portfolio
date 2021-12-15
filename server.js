@@ -28,7 +28,7 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // login
 app.get("/", (req, res) => {
-    res.render("login.ejs");
+    res.render("login");
 })
 
 // index
