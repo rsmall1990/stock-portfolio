@@ -23,6 +23,11 @@ app.use(express.urlencoded({ extended: false })); // creates req.body, setting e
 
 // Routes
 
+// login
+app.get("/", (req, res) => {
+    res.send("Test Login Page");
+})
+
 // index
 app.get("/stocks", (req, res) => {
   //for (i = 0; i < Stock.length; i += 1) {
