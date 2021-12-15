@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Stock = require("./models/stock.js");
+const methodOverride = require("method-override");
 
 // initialize app
 const app = express();
