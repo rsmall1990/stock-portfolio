@@ -8,20 +8,18 @@
     <title>Add Portfolio Stock</title>
   </head>
   <body>
-    <div>
-      <form action="/stocks" method="post">
-        <fieldset>
-          <legend>Add Stock</legend>
-            Name: <input type="text" name="Name"> 
-            Ticker:<input type="text" name="Ticker Symbol">
-            Current Price:<input type="number" name="Current Price">
-            Current Holding:<input type="checkbox" value="Current Holding">
-            Buy Price: <input type="number" name="Buy Price">
-            Quantity: <input type="number" name="Quantity">
-        </fieldset>
-        <button>
-            <a href="/stocks/">Cancel</a>
-        </button>
+    <nav>
+      <a href="/stocks">Back</a>
+    </nav>
+    <div class="container">
+      <form action="/stocks" method="POST">
+        Name: <input type="text" name="Name"> 
+        Ticker:<input type="text" name="Ticker Symbol">
+        Current Price:<input type="number" name="Current Price">
+        Buy Price: <input type="number" name="Buy Price">
+        Quantity: <input type="number" name="Quantity">
+        Current Holding:<input type="checkbox" value="Current Holding"><br>
+        <input type="submit" name="" value="Add Stock">
       </form>
     </div>
   </body>

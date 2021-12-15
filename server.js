@@ -20,7 +20,7 @@ db.on("disconnected", () => console.log("Disconnected from MongoDB"));
 db.on("error", () => console.log("MongoDB Error:" + err.message));
 
 // Middleware
-app.use(express.urlencoded({ extended: false })); // creates req.body, setting extended to false turns off unneeded express functionality
+app.use(express.urlencoded({ extended: true })); // creates req.body, setting extended to false turns off unneeded express functionality
 app.use(express.static("public")); //use public folder for static assets
 app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
@@ -28,8 +28,8 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // login
 app.get("/", (req, res) => {
-    res.render("login.ejs");
-})
+  res.render("login.ejs");
+});
 
 // index
 app.get("/stocks", (req, res) => {
@@ -53,7 +53,7 @@ app.get("/stocks/new", (req, res) => {
 // delete
 app.delete("/stocks/:id", (req, res) => {
   Stock.findByIdAndDelete(req.params.id, (err, copyOfDeletedStock) => {
-    res.send(copyOfDeletedStock);
+    res.send("deleting");
   });
 });
 
@@ -71,14 +71,17 @@ app.put("/stocks/:id", (req, res) => {
 
 // create
 app.post("/stocks", (req, res) => {
-  req.body.CurrentHolding = !!req.body.CurrentHolding;
-  Stock.create(req.body, (err, addedStock) => {
-    res.send(addedStock);
+  if (req.body.CurrentHolding === "on") {
+    req.body.CurrentHolding = true;
+  } else {
+    req.body.CurrentHolding = false;
+  }
+  Stock.create(req.body, (error, stock) => {
+    res.send(stock);
   });
 });
 
-// Edit
-
+// Edits
 
 // show
 app.get("/stocks/:id", (req, res) => {

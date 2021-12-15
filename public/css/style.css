@@ -24,3 +24,20 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0; }
+
+  /* forms */
+input[type="number"],
+input[type="text"],
+input[type="url"],
+textarea,
+#newStockForm {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 2px solid #b1afaf;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; 
+  display: block;
+}
+

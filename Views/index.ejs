@@ -26,15 +26,20 @@
                 <th>currentHolding</th>
                 <th>BuyPrice</th>
                 <th>Quantity</th>
+                <th>Delete</th>
             </tr>
             <% for(let i = 0; i < stock.length; i+=1) { %>
                 <tr>
-                    <td><a href="/stocks/<%= stock[i]._id; %>"</a><%= stock[i].Name %> </td>
+                    <td><a href="/stocks/<%= stock[i]._id; %>"><%= stock[i].Name %></a></td>
                     <td><%= stock[i].Ticker %></td>
                     <td><%= stock[i].CurrentPrice %></td>
                     <td><%= stock[i].CurrentHolding %></td>
                     <td><%= stock[i].BuyPrice %></td>
                     <td><%= stock[i].Quantity %></td>
+                    <td><form action="/stocks/<%= stock.id %>?_method=DELETE" method="POST">
+                            <input type="submit" value="DELETE" />
+                        </form>
+                    </td>
                 </tr>
             <% } %>
         </table>
