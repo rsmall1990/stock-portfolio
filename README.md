@@ -11,15 +11,14 @@ Here is a basic stock portfolio tracker app called...you guessed it...Stock Port
 - Heroku deployment...pending
 - PowerBI integration
 
-## Screenshots
-
-
 ### WireFrame
-![Wireframe](https://raw.githubusercontent.com/rsmall1990/GA-ticker-symbol-project/master/Screen%20Shot%202021-10-27%20at%208.06.04%20PM.png)
-
+![Wireframe](https://github.com/rsmall1990/stock-portfolio/blob/master/Screen%20Shot%202021-12-15%20at%2010.19.37%20AM.png)
 ![Schreenshot 2](https://github.com/rsmall1990/GA-ticker-symbol-project/blob/master/liveAppScreenshot.jpg)
-## Getting Started
 
+## Screenshots
+![Screenshot](https://github.com/rsmall1990/stock-portfolio/blob/master/Screen%20Shot%202021-12-15%20at%205.28.46%20PM.png)
+
+## Getting Started
 [Click here](https://sleepy-badlands-85646.herokuapp.com/) to see the site live
 
 ## Future Enhancements
