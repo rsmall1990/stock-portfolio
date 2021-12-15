@@ -1,8 +1,8 @@
 // dependencies
 const express = require("express");
+const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const Stock = require("./models/stock.js");
-const methodOverride = require("method-override");
 
 // initialize app
 const app = express();
@@ -21,6 +21,8 @@ db.on("error", () => console.log("MongoDB Error:" + err.message));
 
 // Middleware
 app.use(express.urlencoded({ extended: false })); // creates req.body, setting extended to false turns off unneeded express functionality
+app.use(express.static("public")); //use public folder for static assets
+app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // Routes
 
