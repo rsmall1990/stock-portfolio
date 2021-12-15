@@ -10,19 +10,18 @@ const app = express();
 require("dotenv").config();
 
 // connect and config mongoDB with mongoose
-
-mongoose.connect(process.env.DATABASE_URL);
-
 const db = mongoose.connection;
+mongoose.connect(process.env.DATABASE_URL);
 
 // setup mongoDB event listeners
 db.on("connected", () => console.log("Connected to MongoDB"));
+db.on("disconnected", () => console.log("Disconnected from MongoDB"));
 db.on("error", () => console.log("MongoDB Error:" + err.message));
 
-// mount middleware
+// Middleware
 app.use(express.urlencoded({ extended: false })); // creates req.body, setting extended to false turns off unneeded express functionality
 
-// mount routes
+// Routes
 
 // index
 app.get("/stocks", (req, res) => {
@@ -69,6 +68,9 @@ app.post("/stocks", (req, res) => {
     res.send(addedStock);
   });
 });
+
+// Edit
+
 
 // show
 app.get("/stocks/:id", (req, res) => {
