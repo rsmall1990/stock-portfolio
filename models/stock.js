@@ -9,7 +9,7 @@ const stockSchema  = new mongoose.Schema({
     CurrentHolding: Boolean,
     BuyDate: {type: Date, required: false},
     BuyPrice: {type: Number, required: false},
-    quantity: {type: Number, required: false},
+    Quantity: {type: Number, required: false},
 }, { timestamps: true });
 
 // export the model to be accessed in server.js
