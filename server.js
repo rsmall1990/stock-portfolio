@@ -21,7 +21,7 @@ db.on("error", () => console.log("MongoDB Error:" + err.message));
 
 // Middleware
 app.use(express.urlencoded({ extended: true })); // creates req.body, setting extended to false turns off unneeded express functionality
-app.use(express.static("public")); //use public folder for static assets
+app.use(express.static(__dirname + '/public')); //use public folder for static assets
 app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 // Routes
